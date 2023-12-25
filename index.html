@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validate Websites</title>
+    <!-- ^ CSS File -->
+    <link rel="shortcut icon" href="favicon/bookmark.png" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- ^ Font Awesome File -->
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- ^ BootStrap File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div class="home vh-100 d-flex justify-content-center align-content-center">
+      <div class="container text-center p-5">
+        <h1 class="title text-capitalize mx-auto">bookmarker</h1>
+        <div class="form-content border-2 mt-5 p-3">
+          <div class="content d-flex flex-column gap-3">
+            <h3 class="sub-title pt-3">
+              <i class="fa-solid fa-bookmark"></i>
+              Book your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h3>
+
+            <div class="inp-group text-start">
+              <i class="fa-solid fa-book me-2"></i>
+              <label for="inputName">site name</label>
+              <input
+                class="form-control mt-2"
+                id="inputName"
+                type="text"
+                placeholder="Bookmark Name"
+                oninput="validationWebsite()"
+              />
+            </div>
+
+            <div class="inp-group text-start">
+              <i class="fa-solid fa-link me-2"></i>
+              <label for="inputUrl">site URL</label>
+              <input
+                class="form-control mt-2"
+                id="inputUrl"
+                type="text"
+                placeholder="Website URL"
+                oninput="validationWebsite()"
+              />
+            </div>
+            <button
+              class="text-capitalize btn btn-danger px-5 py-2 mx-auto w-fit-content"
+              id="btnSubmit"
+              onclick="addWebsite()"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+        <table class="table table-light table-striped mt-3 text-center">
+          <thead>
+            <tr class="text-capitalize">
+              <th>index</th>
+              <th>website name</th>
+              <th>visit</th>
+              <th>delete</th>
+            </tr>
+          </thead>
+          <tbody class="t-body" id="tableData"></tbody>
+        </table>
+      </div>
+
+      <div class="alert-text hidden" id="alertText">
+        <div class="head">
+          <div class="left"><span></span><span></span><span></span></div>
+          <i class="fa-solid fa-x x-mark" id="closeAlert" closeTab()></i>
+        </div>
+        <div class="body">
+          <p class="fs-5 fw-bold my-3 text-start">
+            Site Name or Url is not valid, Please follow the rules below :
+          </p>
+          <ul>
+            <li class="text-start my-2">
+              <i class="fa-solid fa-circle-arrow-right" id="closeAlert"></i>
+              Site name must contain at least 3 characters
+            </li>
+            <li class="text-start my-2">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+              Site URL must be a valid one
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ^ JS File -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
